@@ -10,9 +10,14 @@ def main(page: ft.Page):
     user_ip = page.client_ip
     result_text = ft.Text()
 
-    def button_click(event):
-        result_text.value = f"Here is your IP address: {user_ip}"
-        page.update()
+    def button_click(e):
+
+        if user_ip is not 0:
+            result_text.value = f"Here is your IP address: {user_ip}"
+            page.update()
+        else:
+            result_text.value = f"There is no IP address founded"
+            page.update()
 
     button = ft.ElevatedButton(text="Get your IP", on_click=button_click)
 
