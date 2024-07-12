@@ -13,7 +13,7 @@ def main(page: ft.Page):
     def button_click(e):
 
         if user_ip is not 0:
-            result_text.value = f"Here is your IP address: {user_ip}"
+            result_text.value = f"Here is your IP address: ({user_ip})"
             page.update()
         else:
             result_text.value = f"There is no IP address founded"
